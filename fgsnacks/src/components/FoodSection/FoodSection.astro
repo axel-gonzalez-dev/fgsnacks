@@ -1,0 +1,25 @@
+---
+
+const {title, id, menu} = Astro.props;
+---
+
+<section class="mt-10 text-center" id={id}>
+    <h3 class="text-4xl font-medium">{title}</h3>
+
+    <div class="relative overflow-x-auto">
+        <table class="table-auto">
+            <tbody>
+                {
+                    menu?.map((hamburguesa):any => (
+                        <tr>
+                            <th>
+                                {hamburguesa.nombre}
+                            </th>
+                            <td>{hamburguesa.precio}</td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

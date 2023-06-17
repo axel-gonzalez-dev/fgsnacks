@@ -3,13 +3,13 @@ const NavbarLinks = [
     { name: "Hamburguesas", url: "/#hamburguesas" },
     { name: "Hot Dogs", url: "/#hotdogs" },
     { name: "Complementos", url: "/#complementos" },
-    { name: "Contacto", url: "/#contacto" },
+    { name: "Servicio a domicilio", url: "/#servicio" },
     { name: "Horario", url: "/#horario" },
 ];
 ---
 
 <nav
-    class="bg-desert text-asphalt | dark:bg-asphalt dark:text-desert | fixed top-0 z-10 | w-full"
+    class="bg-black text-white | fixed top-0 z-10 | w-full"
 >
     <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
@@ -44,7 +44,7 @@ const NavbarLinks = [
                 class="font-medium | flex flex-col md:flex-row md:space-x-8 | mt-4 md:mt-0"
             >
                 {
-                    NavbarLinks.map(({ name, url }: any, index) => (
+                    NavbarLinks.map(({ name, url }: any) => (
                         <li>
                             <a
                                 href={url}

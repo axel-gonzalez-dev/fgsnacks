@@ -1,7 +1,64 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+/* Import components */
+import FoodSection from "../components/FoodSection/FoodSection.astro";
+
+/* Menu declaration */
+
+const hamburguesas = [
+    { nombre: "Sencilla", precio: 50 },
+    { nombre: "Doble carne", precio: 80 },
+    { nombre: "Hawaiana", precio: 100},
+    { nombre: "Diavlo", precio: 100},
+    { nombre: 'AKB-lika "Especial"', precio: 125}
+];
+
+const  hotdogs = [
+    { nombre: "Sencillo", precio: 18 },
+    { nombre: "Con tocino", precio: 25 },
+    { nombre: 'El Cochidogo "Especial"', precio: 35}
+];
+
+const complementos = [
+    {nombre: "Papas fritas", precio: 30},
+    {nombre: "Papas gajo", precio: 50},
+    {nombre: "Papas con la hamburguesa", precio: 20},
+    {nombre: "Papas panteoneras", precio: 85},
+]
 ---
 
-<Layout title="Welcome to Astro.">
-    <main></main>
+<Layout title="FG Snacks">
+    <main class="bg-black text-white">
+        <section class="min-h-screen flex justify-center items-center bg-grill bg-cover">
+            <div>
+                <h1 class="mb-4 text-8xl font-extrabold tracking-tight leading-none text-white">FG Snacks</h1>
+                <h2 class="mb-8 text-4xl font-norma text-white">
+                    La comida las belica a la parrilla directo desde Atequiza,
+                    Jalisco
+                </h2>
+            </div>
+        </section>
+
+        <FoodSection title="Hamburguesas" id="hamburguesas" menu={hamburguesas}/>
+        <FoodSection title="Hot dogs" id="hotdogs" menu={hotdogs}/>
+        <FoodSection title="Complementos" id="complementos" menu={complementos}/>
+
+        <section class="mt-10" id="servicio">
+            <h3>Servicio a domicilio</h3>
+
+            <p>Puedes ordenar llamando a cualquiera de nuestros numeros:</p>
+
+            <div>
+                <a href="tel:+523313237629">3313237629</a>
+                <a href="tel:+423323861741">3323861741</a>
+            </div>
+        </section>
+
+        <section class="mt-10">
+            <h3>Horario</h3>
+
+            <p>De 8 PM a 11 PM de Viernes a Domingo</p>
+        </section>
+    </main>
 </Layout>
